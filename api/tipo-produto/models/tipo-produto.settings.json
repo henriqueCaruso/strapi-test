@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipo_produtos",
+  "info": {
+    "name": "Tipo_produto"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo_tipo_produto": {
+      "type": "uid",
+      "required": true,
+      "maxLength": 10
+    },
+    "descricao": {
+      "type": "text",
+      "maxLength": 50,
+      "required": true
+    }
+  }
+}

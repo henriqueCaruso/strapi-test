@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendas",
+  "info": {
+    "name": "Venda",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo_venda": {
+      "type": "uid",
+      "required": true,
+      "maxLength": 10
+    },
+    "valor": {
+      "type": "decimal",
+      "max": 999999.99,
+      "required": true,
+      "min": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pendente_Aprovacao",
+        "Pendente_Pagamento",
+        "Concluida",
+        "Pendente_Entrega"
+      ],
+      "default": "Pendente_Aprovacao",
+      "required": true
+    },
+    "data_venda": {
+      "type": "datetime",
+      "required": true
+    },
+    "forma_pagamento": {
+      "type": "enumeration",
+      "enum": [
+        "Cartao",
+        "Parcelado_Cartao",
+        "Boleto",
+        "Pix"
+      ],
+      "default": "Cartao",
+      "required": true
+    }
+  }
+}

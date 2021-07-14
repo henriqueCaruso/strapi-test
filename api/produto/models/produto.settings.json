@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "Produto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo_produto": {
+      "type": "uid",
+      "required": true
+    },
+    "quantidade": {
+      "type": "decimal",
+      "required": true,
+      "default": 0,
+      "max": 9999.99,
+      "min": 0
+    },
+    "preco": {
+      "type": "decimal",
+      "default": 1,
+      "required": true,
+      "max": 999999.99,
+      "min": 0
+    },
+    "origem": {
+      "type": "string",
+      "default": "HGB",
+      "required": true
+    },
+    "data_entrada": {
+      "type": "date",
+      "required": true
+    },
+    "unidade": {
+      "type": "enumeration",
+      "enum": [
+        "UN",
+        "KG",
+        "PC",
+        "CX"
+      ],
+      "default": "KG",
+      "required": true
+    },
+    "tipo_produto": {
+      "model": "tipo-produto"
+    }
+  }
+}
